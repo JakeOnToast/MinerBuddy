@@ -1,0 +1,15 @@
+{
+  "ores": [
+    {
+      "id": 0,
+      "name": "Wood",
+      "description": "na"
+    },
+    {
+      "id": 1,
+      "name": "coal",
+      "description": "na"
+    }
+
+  ]
+}

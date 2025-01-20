@@ -1,0 +1,125 @@
+
+packed_tiles.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+diamondfull
+  rotate: false
+  xy: 1, 515
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+diamondhole
+  rotate: false
+  xy: 514, 1029
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+diamondleft
+  rotate: false
+  xy: 1, 1
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+diamondright
+  rotate: false
+  xy: 1540, 1286
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+diamondtile
+  rotate: false
+  xy: 1, 1286
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+dirtfull
+  rotate: false
+  xy: 1027, 1286
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+dirthole
+  rotate: false
+  xy: 514, 1286
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+dirtleft
+  rotate: false
+  xy: 514, 515
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+dirtright
+  rotate: false
+  xy: 771, 515
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+sandfull
+  rotate: false
+  xy: 1, 772
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+sandhole
+  rotate: false
+  xy: 1, 1029
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+sandleft
+  rotate: false
+  xy: 1, 258
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+sandright
+  rotate: false
+  xy: 1540, 1029
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+stonefull
+  rotate: false
+  xy: 1027, 1029
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+stonehole
+  rotate: false
+  xy: 514, 772
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+stoneleft
+  rotate: false
+  xy: 258, 258
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+stoneright
+  rotate: false
+  xy: 1027, 772
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

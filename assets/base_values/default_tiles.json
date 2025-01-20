@@ -1,0 +1,47 @@
+{
+  "tiles":[
+    {
+      "id": 0,
+      "name": "Dirt",
+      "description": "na",
+      "price": 100,
+      "powerRequired": 0,
+      "maxHealth": 100,
+      "regenTime": 4000,
+      "xpGiven": 5
+    },
+    {
+      "id": 1,
+      "name": "Sand",
+      "description": "na",
+      "price": 500,
+      "powerRequired": 1,
+      "maxHealth": 200,
+      "regenTime": 8000,
+      "xpGiven": 15
+
+    },
+    {
+      "id": 2,
+      "name": "Stone",
+      "description": "na",
+      "price": 1500,
+      "powerRequired": 1,
+      "maxHealth": 500,
+      "regenTime": 12000,
+      "xpGiven": 30
+
+    },
+    {
+      "id": 5,
+      "name": "Diamond",
+      "description": "na",
+      "price": 50000000,
+      "powerRequired": 5,
+      "maxHealth": 25000,
+      "regenTime": 60000,
+      "xpGiven": 3000
+
+    }
+  ]
+}
