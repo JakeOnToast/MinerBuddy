@@ -21,11 +21,11 @@ I decided to break each block down and only render what was necessary. For examp
 
 #### World
 
-![World screenshot](assets\world_screenshot.jpg)
+<img src="assets\world_screenshot.jpg"/>
 
 #### Shop
 
-![Shop screenshot](assets\shop_screenshot.jpg)
+<img src="assets\shop_screenshot.jpg"/>
 
 ### Dirt
 
