@@ -34,7 +34,6 @@ public class Ore {
         this.mined = false;
         this.id = -1;
         this.health = 0;
-
     }
 
     public Ore(JsonValue data){
@@ -42,7 +41,6 @@ public class Ore {
         this.id = data.getInt("id");
         this.name = data.getString("name");
         this.description = data.getString("description");
-
     }
 
     public void update(long currentTime){
@@ -54,14 +52,12 @@ public class Ore {
                 mined = false;
             }
         }
-
     }
 
     //TODO remove this
     public void setId(int id){
         this.id = id;
     }
-
 
     public boolean isMined(){return this.mined;}
 
@@ -70,6 +66,4 @@ public class Ore {
     public String getName(){
         return this.name;
     }
-
-
 }

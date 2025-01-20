@@ -18,8 +18,6 @@ import java.util.HashMap;
 
 public class MapHandler {
 
-
-
     // sizes
     private float width;
     private float height;
@@ -47,7 +45,6 @@ public class MapHandler {
     private Tile purchasingTile;
     private Ore purchasingOre;
 
-
     // rows by cols
     private final int ROWS = 7;
     private final int COLS = 7;
@@ -59,7 +56,6 @@ public class MapHandler {
     private final HashMap<String, Sprite> oreImages = new HashMap<>();
 
     public MapHandler(MinerBuddyGame game){
-
 
         final TextureAtlas tileAtlas = game.getAssetManager().get("packed_textures/packed_tiles.atlas", TextureAtlas.class);
 
@@ -85,10 +81,7 @@ public class MapHandler {
         damagedTileIndexes = new Array<>();
 
         this.scale = 2.5f;
-
     }
-
-
 
     public void draw(SpriteBatch batch, int mode){
 
@@ -103,7 +96,6 @@ public class MapHandler {
 
                 float yVal = p.y;
                 float xVal = p.x - tileSize * scale;
-
 
                 // only draw if onscreen
                 if (!(yVal > this.height || yVal + tileSize * scale < 0 || xVal > this.width
@@ -135,8 +127,6 @@ public class MapHandler {
                             damagedTileIndexes.add(new Vector2(i, j));
 
                         }
-
-
                     }
                 }
 
@@ -150,11 +140,9 @@ public class MapHandler {
                 }
 
                 if(j == 0){
-
                     yVal -= tileSize * scale / 2;
                     batch.draw(tileImages.get(tile.getName(3)), xVal, yVal, scale *  tileSize, scale * tileSize);
                 }
-
             }
         }
     }
@@ -166,8 +154,8 @@ public class MapHandler {
         renderer.setColor(0.3f, 0f, 0f, 0.2f);
 
         for (Vector2 pos: damagedTileIndexes) {
-//            float ratio = 1 - map[(int)pos.x][(int)pos.y].getHealthRatio();
-//            renderer.setColor(0.2f, 0f, 0f, 0.7f * ratio);
+            // float ratio = 1 - map[(int)pos.x][(int)pos.y].getHealthRatio();
+            // renderer.setColor(0.2f, 0f, 0f, 0.7f * ratio);
 
             Vector2 p = cartToIso(tileSize*pos.y , tileSize*pos.x);
             // draw two triangles to make tile shape
@@ -176,14 +164,14 @@ public class MapHandler {
         }
         damagedTileIndexes.clear();
 
-//        if (focusedTileIndex != null){
-//            renderer.setColor(0.3f, 0.5f, 0.8f, 1f);
-//            Vector2 p = cartToIso(tileSize*focusedTileIndex.y , tileSize*focusedTileIndex.x);
-//            renderer.line(p.x, p.y, p.x + tileSize * scale, p.y + tileSize * scale / 2);
-//            renderer.line(p.x, p.y, p.x - tileSize * scale, p.y + tileSize * scale / 2);
-//            renderer.line(p.x, p.y + tileSize * scale, p.x + tileSize * scale, p.y + tileSize * scale / 2);
-//            renderer.line(p.x, p.y + tileSize * scale, p.x - tileSize * scale, p.y + tileSize * scale / 2);
-//        }
+        // if (focusedTileIndex != null){
+        //     renderer.setColor(0.3f, 0.5f, 0.8f, 1f);
+        //     Vector2 p = cartToIso(tileSize*focusedTileIndex.y , tileSize*focusedTileIndex.x);
+        //     renderer.line(p.x, p.y, p.x + tileSize * scale, p.y + tileSize * scale / 2);
+        //     renderer.line(p.x, p.y, p.x - tileSize * scale, p.y + tileSize * scale / 2);
+        //     renderer.line(p.x, p.y + tileSize * scale, p.x + tileSize * scale, p.y + tileSize * scale / 2);
+        //     renderer.line(p.x, p.y + tileSize * scale, p.x - tileSize * scale, p.y + tileSize * scale / 2);
+        // }
 
     }
 
@@ -195,8 +183,6 @@ public class MapHandler {
         // draw sides
         batch.draw(tileImages.get(tile.getName(2)), x + width/2, y - height/2, width/2, height);
         batch.draw(tileImages.get(tile.getName(3)), x, y - height/2, width/2, height);
-
-
     }
 
 
@@ -255,7 +241,6 @@ public class MapHandler {
         }
         return new Vector2(sRow, sCol);
     }
-
 
     public void focusOnTileFromPoint(float x, float y){
 
@@ -335,7 +320,6 @@ public class MapHandler {
             if (yDist < 0){
                 flippedXDist *= -1;
             }
-
 
             if (cumulativeScroll.len2() < 100){
                 focusScrolling = false;
@@ -421,8 +405,6 @@ public class MapHandler {
             focusScrolling = false;
             focusOnTileFromPoint(width/2, height/2);
         }
-
-
     }
 
     public void endFocusScroll(){
@@ -439,9 +421,7 @@ public class MapHandler {
             cumulativeScroll.scl(0);
             focusScrollDirection = null;
 //            focusedTileIndex = null;
-
         }
-
     }
 
 
@@ -457,7 +437,6 @@ public class MapHandler {
         }
 
         checkTranslation();
-
     }
 
     public void onScale(float focusX, float focusY, float scaleFactor){

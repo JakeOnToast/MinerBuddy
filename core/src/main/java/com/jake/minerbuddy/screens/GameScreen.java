@@ -28,7 +28,7 @@ import static com.jake.minerbuddy.widgets.WidgetFunctions.cleanPrice;
 public class GameScreen implements Screen, GestureDetector.GestureListener {
 
 	
-	//MODES
+	// MODES
 	// used to mine the blocks
 	public static final int MINE = 0;
 	// used to place new blocks and change ores/workers
@@ -73,19 +73,14 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 
 		mapHandler = new MapHandler(game);
 
-
-
 		mineSound = Gdx.audio.newSound(Gdx.files.internal("sounds/dirt_mine.mp3"));
+		uiStage = new Stage(game.viewport, game.batch);
 
 		GestureDetector gd = new GestureDetector(this);
-
-
-		uiStage = new Stage(game.viewport, game.batch);
 
 		inputMultiplexer = new InputMultiplexer();
 		inputMultiplexer.addProcessor(gd);
 		inputMultiplexer.addProcessor(uiStage);
-
 
 		buttonAtlas = new TextureAtlas("packed_textures/buttons.atlas");
 		buttonSkin = new Skin(buttonAtlas);
@@ -99,11 +94,10 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
 				game.setScreen(game.shopScreen);
-//				mineSound.play();
-//				mapHandler.focusOnTileFromPoint(Gdx.input.getX(), Gdx.input.getY());
+				// mineSound.play();
+				// mapHandler.focusOnTileFromPoint(Gdx.input.getX(), Gdx.input.getY());
 			}
 		});
-
 
 		shopButton.setPosition(100, 100);
 		uiStage.addActor(shopButton);
@@ -127,17 +121,14 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 		uiStage.addActor(selectModeButton);
 
 		buildOverlay = new BuildOverlay(this, buttonSkin);
-
 	}
 
 	@Override
 	public void render(float delta) {
 		// Draw your screen here. "delta" is the time since last render in seconds.
-//		Gdx.gl.glClearColor(0.57f, 0.77f, 0.85f, 1);
+		// Gdx.gl.glClearColor(0.57f, 0.77f, 0.85f, 1);
 		Gdx.gl.glClearColor(0f, 0f, 0f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-
 
 		game.camera.update();
 
@@ -157,7 +148,6 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 				if (Gdx.input.isTouched()){
 					mapHandler.onScroll(Gdx.input.getDeltaX(), -Gdx.input.getDeltaY());
 					Tile tile = mapHandler.selectTile(Gdx.input.getX(), flipY(Gdx.input.getY()));
-
 					//TODO remove this and replace with real code
 					if (tile != null) {
 						if (!tile.isMined()){
@@ -168,25 +158,22 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 						}
 					}
 				}
-				//draw pickaxe
+				// draw pickaxe
 				break;
 			case PURCHASE:
 				// draw build ui
 				if (Gdx.input.isTouched()){
 					mapHandler.onScrollFocus(Gdx.input.getDeltaX(), -Gdx.input.getDeltaY());
-				}else mapHandler.endFocusScroll();
+				} else mapHandler.endFocusScroll();
 
 				if (mapHandler.shouldShowBuyButton()) buildOverlay.draw(game.batch);
-
 				break;
 			case SELECT:
 				if (Gdx.input.isTouched()){
 					mapHandler.onScrollFocus(Gdx.input.getDeltaX(), -Gdx.input.getDeltaY());
-				}else mapHandler.endFocusScroll();
+				} else mapHandler.endFocusScroll();
 				break;
 		}
-
-
 
 		game.batch.end();
 
@@ -199,15 +186,12 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 		mapHandler.draw(game.shapeRenderer);
 
 		// can be used to mark center of screen
-//		game.shapeRenderer.circle(game.viewport.getScreenWidth()/2, game.viewport.getScreenHeight()/2, 20);
+		// game.shapeRenderer.circle(game.viewport.getScreenWidth()/2, game.viewport.getScreenHeight()/2, 20);
 
 		game.shapeRenderer.end();
 		Gdx.gl.glDisable(GL20.GL_BLEND);
 
-
 		uiStage.draw();
-
-
 	}
 
 	private float flipY(float y){
@@ -265,7 +249,6 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 		// This method is called when another screen replaces this one.
 	}
 
-
 	@Override
 	public boolean touchDown(float x, float y, int pointer, int button) {
 		return false;
@@ -307,7 +290,6 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 	@Override
 	public boolean pinch(Vector2 initialPointer1, Vector2 initialPointer2, Vector2 pointer1, Vector2 pointer2) {
 
-
 		// find midpoint to zoom into
 		float focusX = (initialPointer1.x + initialPointer2.x)/2;
 		float focusY = (initialPointer1.y + initialPointer2.y)/2;
@@ -319,7 +301,6 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 			lastScaleFactor = scaleFactor;
 		}
 
-
 		return true;
 	}
 
@@ -329,7 +310,6 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 		lastScaleFactor = 1;
 	}
 
-
 	@Override
 	public void dispose() {
 		// Destroy screen's assets here.
@@ -338,7 +318,6 @@ public class GameScreen implements Screen, GestureDetector.GestureListener {
 		mineSound.dispose();
 		buttonAtlas.dispose();
 		uiStage.dispose();
-
 	}
 
 	public MinerBuddyGame getGame() {

@@ -1,15 +1,10 @@
 package com.jake.minerbuddy.tiles;
 
-
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
-
-
 //import org.json.JSONException;
 //import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -58,7 +53,6 @@ public class Tile {
         this.id = id;
         //TODO remove this
 
-
         this.ore = new Ore();
 
         if (this.id == 1){
@@ -72,9 +66,7 @@ public class Tile {
         this.maxHealth = this.health = data.getInt("maxHealth");
         this.regenTime = data.getInt("regenTime");
         this.xpGiven = data.getInt("xpGiven");
-
     }
-
 
     public Tile(JsonValue data){
         this.ore = new Ore();
@@ -99,7 +91,6 @@ public class Tile {
         this.regenTime = other.regenTime;
         this.xpGiven = other.xpGiven;
     }
-
 
     public void update(long currentTime){
 
@@ -131,35 +122,22 @@ public class Tile {
     }
 
 
-//    public void mine(Pickaxe pickaxe){
-//
-//        if(mined){
-//            // make sound
-//            return;
-//        }
-//
-//        if (pickaxe.getPower() < this.powerRequired){
-//            // play fail sound and give flag about power maybe
-//            return;
-//        }
-//
-//
-//
-//        this.health -= pickaxe.getDamage();
-//
-//
-//
-//        if (this.health <= 0){
-//
-//            mined = true;
-//            minedTime = System.currentTimeMillis();
-//
-//
-//            pickaxe.addXp(this.xpGiven);
-//
-//        }
-//
-//    }
+    // public void mine(Pickaxe pickaxe){
+    //     if(mined){
+    //         // make sound
+    //         return;
+    //     }
+    //     if (pickaxe.getPower() < this.powerRequired){
+    //         // play fail sound and give flag about power maybe
+    //         return;
+    //     }
+    //     this.health -= pickaxe.getDamage();
+    //     if (this.health <= 0){
+    //         mined = true;
+    //         minedTime = System.currentTimeMillis();
+    //         pickaxe.addXp(this.xpGiven);
+    //     }
+    // }
 
     public void damage(){
         //TODO remove this shit
@@ -170,9 +148,7 @@ public class Tile {
         }
     }
 
-
-
-//    public int getOreId(){ return this.ore.getId(); }
+    // public int getOreId(){ return this.ore.getId(); }
 
     public boolean isOreGrown(){
         // if blank ore

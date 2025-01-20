@@ -2,9 +2,7 @@ package com.jake.minerbuddy.widgets;
 
 public class WidgetFunctions {
 
-
     public static String cleanPrice(int price){
-
         int power = (int) Math.log10(price);
         if (power < 3){
             return Integer.toString(price);
@@ -14,5 +12,4 @@ public class WidgetFunctions {
             return (float)price / 1000000 + "M";
         }
     }
-
 }

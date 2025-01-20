@@ -42,17 +42,13 @@ public class ShopTab {
                 dx *= 0.875f;
                 translate(dx);
             }
-
-
         }
 
         // draw card
         for (ShopCard card: cards) {
             card.draw(batch, scrollX);
         }
-
     }
-
 
     public void translate(float dx){
 
@@ -64,11 +60,7 @@ public class ShopTab {
         for (ShopCard card: cards){
             card.move(scrollX);
         }
-
-
     }
-
-
 
     public void resize(){
         for (ShopCard card: cards){

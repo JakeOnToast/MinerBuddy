@@ -24,13 +24,7 @@ public class TileTab extends ShopTab{
         for (JsonValue data:tiles) {
             cards.add(new TileCard(this, shopScreen, this.stage, data));
         }
-
-
-
-
     }
-
-
 
     public TextureAtlas getTileAtlas() {
         return tileAtlas;

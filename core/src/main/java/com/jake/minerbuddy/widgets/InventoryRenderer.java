@@ -10,7 +10,6 @@ public class InventoryRenderer {
 
     public InventoryRenderer(HashMap<String, Sprite> textures){
         this.textures = textures;
-
     }
 
 }

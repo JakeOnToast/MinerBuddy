@@ -33,13 +33,8 @@ public class ShopScreen implements Screen {
     private final TextureAtlas buttonAtlas;
     private final Skin buttonSkin;
 
-
-    //tabs - buttons that don't move
+    // tabs - buttons that don't move
     // tile tab, ore tab etc
-
-
-
-
 
     public ShopScreen(MinerBuddyGame game){
 
@@ -47,10 +42,8 @@ public class ShopScreen implements Screen {
 
         stage = new Stage(game.viewport, game.batch);
 
-
         inputMultiplexer = new InputMultiplexer();
         inputMultiplexer.addProcessor(stage);
-
 
         buttonAtlas = new TextureAtlas("packed_textures/buttons.atlas");
         buttonSkin = new Skin(buttonAtlas);
@@ -60,7 +53,7 @@ public class ShopScreen implements Screen {
         tbs.font = game.font;
 
         TextButton returnButton = new TextButton("X", tbs);
-//        returnButton.setPosition(1800, 800);
+        // returnButton.setPosition(1800, 800);
         returnButton.setPosition(0, 0);
         returnButton.setSize(128,128);
         returnButton.addListener(new ChangeListener() {
@@ -71,22 +64,14 @@ public class ShopScreen implements Screen {
         });
         stage.addActor(returnButton);
 
-
         tab = new TileTab(this);
         //TODO move this
         inputMultiplexer.addProcessor(tab.getStage());
-
-
     }
 
 
     private void createTabs(){
-
-
-
-
     }
-
 
     @Override
     public void show() {
@@ -99,14 +84,9 @@ public class ShopScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         game.batch.begin();
-
         tab.draw(game.batch);
-
         game.batch.end();
-
         stage.draw();
-
-
     }
 
     @Override
@@ -114,7 +94,6 @@ public class ShopScreen implements Screen {
 
         game.viewport.update(width, height, true);
         game.batch.setProjectionMatrix(game.camera.combined);
-
 
         // set card sizes
         ShopCard.height = (float)height*0.6f;
@@ -125,27 +104,18 @@ public class ShopScreen implements Screen {
         ShopCard.imagePadding = (int)(ShopCard.width*9/64);
 
         // 2.25/8
-
         // resize all tabs
         tab.resize();
-
-
     }
 
     @Override
-    public void pause() {
-
-    }
+    public void pause() {}
 
     @Override
-    public void resume() {
-
-    }
+    public void resume() {}
 
     @Override
-    public void hide() {
-
-    }
+    public void hide() {}
 
     @Override
     public void dispose() {
@@ -154,7 +124,6 @@ public class ShopScreen implements Screen {
         buttonSkin.dispose();
         tab.dispose();
     }
-
 
     // getters
     public Stage getStage(){
@@ -168,6 +137,4 @@ public class ShopScreen implements Screen {
     public Skin getButtonSkin(){
         return this.buttonSkin;
     }
-
-
 }

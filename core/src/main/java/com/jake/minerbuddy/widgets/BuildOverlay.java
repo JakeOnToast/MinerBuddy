@@ -35,16 +35,11 @@ public class BuildOverlay {
         buyButton.setPosition(250, 250);
 
         stage.addActor(buyButton);
-
     }
-
 
     public void draw(Batch batch){
-
         buyButton.draw(batch, 1);
-
     }
-
 
     public TextButton getBuyButton(){
         return this.buyButton;
@@ -57,6 +52,4 @@ public class BuildOverlay {
     public void deactivate(){
         gameScreen.getInputMultiplexer().removeProcessor(stage);
     }
-
-
 }

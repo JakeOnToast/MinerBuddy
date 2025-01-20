@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public class Inventory {
 
-
     // needs to store bought ores, blocks, and workers etc
 
     private ArrayList<Tile> tiles;

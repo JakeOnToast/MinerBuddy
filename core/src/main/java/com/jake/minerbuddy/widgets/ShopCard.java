@@ -32,7 +32,4 @@ public abstract class ShopCard {
     public abstract void move(float scrollX);
     public abstract void resize();
 
-
-
-
 }

@@ -29,7 +29,6 @@ public class TileCard extends ShopCard{
 
     private Texture card;
 
-
     public TileCard(TileTab tab, ShopScreen shopScreen, Stage stage, JsonValue data) {
 
         this.tab = tab;
@@ -39,7 +38,6 @@ public class TileCard extends ShopCard{
         // calculate position
         this.x = 0;
         this.y = 0;
-
 
         this.tileName = data.getString("name");
         //TODO sync label style with game
@@ -53,7 +51,6 @@ public class TileCard extends ShopCard{
         sprites.add(tab.getTileAtlas().createSprite(tileName.toLowerCase()+"full"));
         sprites.add(tab.getTileAtlas().createSprite(tileName.toLowerCase()+"left"));
         sprites.add(tab.getTileAtlas().createSprite(tileName.toLowerCase()+"right"));
-
 
         buttons = new Array<>();
 
@@ -74,16 +71,12 @@ public class TileCard extends ShopCard{
             }
         });
 
-
         buttons.add(button);
         stage.addActor(button);
 
         move(0f);
         resizeButtons();
-
-        
     }
-
 
     @Override
     public void draw(SpriteBatch batch, float scrollX) {
@@ -100,7 +93,6 @@ public class TileCard extends ShopCard{
 
         buttons.get(0).draw(batch, 1);
         nameLabel.draw(batch, 1);
-
     }
 
     @Override
@@ -110,9 +102,7 @@ public class TileCard extends ShopCard{
         }
         // 0.8020833 is closer but not needed
         nameLabel.setPosition(this.x + imagePadding + scrollX, this.y + height * 0.8f);
-
     }
-
 
     @Override
     public void resize() {
@@ -128,9 +118,4 @@ public class TileCard extends ShopCard{
             button.setSize(width - 2*imagePadding, height/6);
         }
     }
-
-
-
-
-
 }
